@@ -1,6 +1,6 @@
 # Gina Yang
 # QBIO 499
-# 1/16/2019
+# 16 January 2019
 
 import random
 # Global variable for stop codons
@@ -81,7 +81,6 @@ def getlongORFcoords(seq, th):
 # two inputs: a string and a threshold
 # for each ORF longer than th print: starting position, ending position, strand 
 # information (+1 forward, -1 reverse complement), and sequence
-# remember to consider the reverse complement of the sequence
 def printORF2d(seq, th):
     """Prints out info about each ORF longer than threshold found"""
     coords = getlongORFcoords(seq, th)

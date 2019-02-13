@@ -8,13 +8,13 @@ Required inputs: An *.fa* or *.fasta* file containing a nucleotide sequence stri
 
 The script outputs the threshold, the starting and ending positions of each ORF longer than the threshold, +1 (if ORF was found in the forward direction) or -1 (if ORF was found in the reverse complement), and finally the ORF itself.
 
-The getthresh() and printORF2d() functions can also be called manually on a nucleotide string as 
+The ORFs of a desired nucleotide string can also be obtained without running the script with the commands
 
 `>>>threshold = getthresh(sequenceString, numSimulations)`
 
 `>>>printORF2d(sequenceString, threshold)`
 
-where sequenceString is the nucleotide string and numSimulations denotes the number of simulations to run.
+where sequenceString is the nucleotide string and numSimulations denotes the number of simulations to run. 
 
 
 *Note: the script slows significantly as the number of simulations increases. This is due to the inefficiency of shuffling a long string.*

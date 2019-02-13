@@ -1,6 +1,4 @@
-# Assignment 1
-
-## Identifying open reading frames
+# Assignment 1: Identifying Open Reading Frames (ORFs)
 
 #### 16 January 2019
 
@@ -12,9 +10,9 @@ The script outputs the threshold, the starting and ending positions of each ORF 
 
 The getthresh() and printORF2d() functions can also be called manually on a nucleotide string as 
 
->>>threshold = getthresh(sequenceString, numSimulations)
+`>>>threshold = getthresh(sequenceString, numSimulations)`
 
->>>printORF2d(sequenceString, threshold)
+`>>>printORF2d(sequenceString, threshold)`
 
 where sequenceString is the nucleotide string and numSimulations denotes the number of simulations to run.
 

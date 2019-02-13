@@ -10,6 +10,7 @@ STOP = ["TAA", "TAG", "TGA"]
 # the output is the position of the first in-frame stop codon,
 # if there is no in-frame stop codon the output is -1
 def getstop(seq):
+    """Gets the position of the first in-frame stop codon"""
     pos = 0
     stop = -1  # Output - initialise as -1
     while pos + 3 <= len(seq):
@@ -22,8 +23,8 @@ def getstop(seq):
 # the input of this function is a string (which might NOT start with "ATG")
 # the output is a list of lists [[start1,stop1],[start2,stop2],...]
 # where [starti,stopi] are the start and stop positions of the ith ORF
-# Note: this program will use the getstop function
 def getallORFcoords(seq):
+    """Gets a list of the stop and start codons of ORFs found"""
     curr_pos = 0
     coords = []
     while seq.find("ATG", curr_pos) != -1:
@@ -44,6 +45,7 @@ def getallORFcoords(seq):
 # the input of this function is the output from the getallORFcoords function
 # the output is the length of the longest ORF
 def getlong(coords):
+    """Returns length of the longest ORF"""
     length_diff = 0
     for pair in coords:
         if length_diff < pair[1] - pair[0]:
@@ -54,8 +56,8 @@ def getlong(coords):
 # two inputs: a string and the number of random shuffle simulations
 # for each random shuffle simulation use the getlong function to find the longest ORF
 # the output will be the longest ORF in all of the random shuffle simulations
-# Note: this function will use the shuffleseq, getallORFcoords, and getlong functions
 def getthresh(seq, nsim):
+    """Returns the threshold--the longest ORF in all random nucleotide shuffle simulations"""
     max_diff = 0
     for i in range(0, nsim):
         shuffled_seq = shuffleseq(seq)
@@ -68,8 +70,8 @@ def getthresh(seq, nsim):
 # two inputs: a string and a threshold
 # the output is similar to that for all getallORFcoords
 # except only those ORFs longer than th are included
-# Note: this function will use the getallORFcoords function
 def getlongORFcoords(seq, th):
+    """Returns only the ORFs longer than threshold"""
     coords = getallORFcoords(seq)
     for pair in coords:
         if pair[1] - pair[0] < th:
@@ -80,8 +82,8 @@ def getlongORFcoords(seq, th):
 # for each ORF longer than th print: starting position, ending position, strand 
 # information (+1 forward, -1 reverse complement), and sequence
 # remember to consider the reverse complement of the sequence
-# Note: this function will use the getlongORFcoords and revcomp functions
 def printORF2d(seq, th):
+    """Prints out info about each ORF longer than threshold found"""
     coords = getlongORFcoords(seq, th)
     revcomp_seq = revcomp(seq)
     revcomp_coords = getlongORFcoords(revcomp_seq, th)
@@ -109,7 +111,7 @@ def printORF2d(seq, th):
 # use the functions below that are from the lectures (with slight modifications)
 
 def loadFASTA(filename):
-    '''Outputs a sequence string from the FASTA file named filename'''
+    """Outputs a sequence string from the FASTA file named filename"""
     infile = open(filename)
     lineslist = infile.readlines()
     infile.close()
@@ -122,14 +124,14 @@ def loadFASTA(filename):
     return output
 
 def shuffleseq(seq):
-    '''Shuffles seq'''
+    """Shuffles seq"""
     mylist = list(seq) # mylist is a list
     random.shuffle(mylist) # mylist is now shuffled. same content different order
     output = "".join(mylist) # output is a string
     return output
 
 def compbase(base):
-    '''Returns complement of base'''
+    """Returns complement of base"""
     output = "?"
     if base == "A":
         output = "T"
@@ -142,7 +144,7 @@ def compbase(base):
     return output
 
 def compseq(seq):
-    '''Returns complement of seq'''
+    """Returns complement of seq"""
     mylist = []
     for base in seq:
         nuc = compbase(base)
@@ -151,11 +153,11 @@ def compseq(seq):
     return output
 
 def rev(seq):
-    '''Returns the reverse of seq'''
+    """Returns the reverse of seq"""
     return seq[::-1]
 
 def revcomp(seq):
-    '''Returns the reverse complement of seq'''
+    """Returns the reverse complement of seq"""
     rv = rev(seq)
     rvcp = compseq(rv)
     return rvcp

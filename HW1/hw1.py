@@ -30,8 +30,8 @@ def getallORFcoords(seq):
         pos_list = []
         start_pos = seq.find("ATG", curr_pos)
         end_pos = start_pos + getstop(seq[start_pos:])
-        curr_pos += 3
-        if curr_pos + 3 > len(seq):  # reached the end of the sequence
+        curr_pos += 1
+        if curr_pos + 1 > len(seq):  # reached the end of the sequence
             break
         if end_pos - start_pos == -1:  # no in frame stop codon; move on
             continue

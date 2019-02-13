@@ -1,4 +1,4 @@
-# Assignment 1: Identifying open reading frames
+# Assignment 1: Identifying Open Reading Frames (ORFs)
 
 #### 16 January 2019
 

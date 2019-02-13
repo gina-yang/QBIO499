@@ -54,11 +54,3 @@ def upgma(speciesList, distances):
         updateDist(speciesList, distances, newTree)
         speciesList.append(newTree)
     return speciesList[0]
-
-def main():
-    tree = upgma(humansList, humansMatrix)
-    print(tree)
-
-
-########################################################################################################################
-main()

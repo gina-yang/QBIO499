@@ -10,9 +10,9 @@ The script outputs the threshold, the starting and ending positions of each ORF 
 
 The getthresh() and printORF2d() functions can also be called manually on a nucleotide string as 
 
-&lt;&lt;&lt;threshold = getthresh(sequenceString, numSimulations)
+&gt;&gt;&gt;threshold = getthresh(sequenceString, numSimulations)
 
-&lt;&lt;&lt;printORF2d(sequenceString, threshold)
+&gt;&gt;&gt;printORF2d(sequenceString, threshold)
 
 where sequenceString is the nucleotide string and numSimulations denotes the number of simulations to run.
 

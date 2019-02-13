@@ -2,8 +2,6 @@
 # QBIO 499
 # Assignment 4
 
-from mitoData import *
-
 def dist(tree1, tree2, distances):
     """Helper fn to find the distance between two input trees within the distances dictionary"""
     for key in distances:

@@ -14,7 +14,7 @@ The ORFs of a desired nucleotide string can also be obtained without running the
 
 `>>>printORF2d(sequenceString, threshold)`
 
-where sequenceString is the nucleotide string and numSimulations denotes the number of simulations to run. 
+where `sequenceString` is the nucleotide string and `numSimulations` denotes the number of simulations to run. 
 
 
 *Note: the script slows significantly as the number of simulations increases. This is due to the inefficiency of shuffling a long string.*

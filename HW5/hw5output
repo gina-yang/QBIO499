@@ -1,0 +1,8 @@
+> fracAboveThres(c1, 90)
+[1] 0.15
+> fracAboveThres(c2, 60)
+[1] 0.52
+> bootstrap(c1, 0.95, 1000, fracAboveThres, 90)
+[1] 0.1133333 0.1866667
+> bootstrap(c2, 0.75, 1000, fracAboveThres, 60)
+[1] 0.4966667 0.5366667

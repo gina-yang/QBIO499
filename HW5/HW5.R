@@ -11,13 +11,16 @@ fracAboveThres <- function(v, th){
 bootstrap <- function(v, confWidth, sampleCount, FUN, ...){
 	qvector <- vector(mode="numeric", length=0)
 	for (i in 1:sampleCount){
-		bsample <- sample(v, replace = TRUE, prob = NULL)
+		# Get bootstrap sample
+		bsample <- sample(v, replace = TRUE, prob = NULL)  
+		# Get the quantity of interest
 		qinterest <- FUN(bsample, ...)
-		qvector[i] = qinterest
+		qvector[i] = qinterest  # Store in a vector
 	}
 	qvector <- sort(qvector, decreasing=FALSE, ...)
-	lower = qvector[as.integer(length(qvector) * (1 - confWidth))]
-	upper = qvector[as.integer(length(qvector) * (confWidth))]
+	percentile = 1 - (1 - confWidth) / 2  # Calculate percentile
+	lower = qvector[as.integer(length(qvector) * (1 - percentile))]
+	upper = qvector[as.integer(length(qvector) * (percentile))]
 	confInterval <- c(lower, upper)
 	return(confInterval)
 }

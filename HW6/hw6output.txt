@@ -1,95 +1,100 @@
+> avgPairwiseDiv(100, afrPop, euroPop)
+Mean: 1872.52
+Standard dev: 160.8748
+> avgPairwiseDiv(100, afrPop, euroPop)
+Mean: 1868.35
+Standard dev: 194.3223
+> 
 > avgPairwiseDiv(100, euroPop)
-Mean: 0.09038273
-Standard dev: 0.02036973
+Mean: 1481.32
+Standard dev: 226.3159
 > avgPairwiseDiv(100, euroPop)
-Mean: 0.09268477
-Standard dev: 0.01198538
+Mean: 1492.29
+Standard dev: 222.887
 > avgPairwiseDiv(100, euroPop)
-Mean: 0.09314291
-Standard dev: 0.01766162
+Mean: 1496.06
+Standard dev: 260.0016
 > avgPairwiseDiv(100, euroPop)
-Mean: 0.09220777
-Standard dev: 0.02039242
+Mean: 1449.01
+Standard dev: 298.7342
 > avgPairwiseDiv(100, euroPop)
-Mean: 0.09451923
-Standard dev: 0.01287842
+Mean: 1463.12
+Standard dev: 238.7255
 > avgPairwiseDiv(100, euroPop)
-Mean: 0.09441679
-Standard dev: 0.01179988
+Mean: 1469.37
+Standard dev: 274.2333
 > avgPairwiseDiv(100, euroPop)
-Mean: 0.09336664
-Standard dev: 0.01448221
+Mean: 1498.92
+Standard dev: 259.0383
 > avgPairwiseDiv(100, euroPop)
-Mean: 0.09286262
-Standard dev: 0.01236797
+Mean: 1429.68
+Standard dev: 241.777
 > avgPairwiseDiv(100, euroPop)
-Mean: 0.0939775
-Standard dev: 0.01315744
+Mean: 1463.77
+Standard dev: 219.0521
 > avgPairwiseDiv(100, euroPop)
-Mean: 0.09119972
-Standard dev: 0.01512027
+Mean: 1506.9
+Standard dev: 206.9618
 > 
 > avgPairwiseDiv(100, afrPop)
-Mean: 0.110335
-Standard dev: 0.01910356
+Mean: 1776.23
+Standard dev: 252.4245
 > avgPairwiseDiv(100, afrPop)
-Mean: 0.1127237
-Standard dev: 0.01166303
+Mean: 1818.82
+Standard dev: 183.2873
 > avgPairwiseDiv(100, afrPop)
-Mean: 0.1135332
-Standard dev: 0.00968169
+Mean: 1835.39
+Standard dev: 152.809
 > avgPairwiseDiv(100, afrPop)
-Mean: 0.1132686
-Standard dev: 0.009790028
+Mean: 1759.7
+Standard dev: 342.9567
 > avgPairwiseDiv(100, afrPop)
-Mean: 0.1120067
-Standard dev: 0.01573049
+Mean: 1786.04
+Standard dev: 252.5648
 > avgPairwiseDiv(100, afrPop)
-Mean: 0.1103167
-Standard dev: 0.01507522
+Mean: 1801.4
+Standard dev: 190.3373
 > avgPairwiseDiv(100, afrPop)
-Mean: 0.1114247
-Standard dev: 0.01828758
+Mean: 1777.76
+Standard dev: 176.3311
 > avgPairwiseDiv(100, afrPop)
-Mean: 0.1131379
-Standard dev: 0.01500683
+Mean: 1763.14
+Standard dev: 232.2707
 > avgPairwiseDiv(100, afrPop)
-Mean: 0.1116585
-Standard dev: 0.0149618
+Mean: 1824.16
+Standard dev: 159.6257
 > avgPairwiseDiv(100, afrPop)
-Mean: 0.1138317
-Standard dev: 0.01021847
+Mean: 1787.42
+Standard dev: 171.4328
 > 
 > avgPairwiseDiv(100, euroPop, afrPop)
-Mean: 0.1185043
-Standard dev: 0.0105822
+Mean: 1857.47
+Standard dev: 173.3306
 > avgPairwiseDiv(100, euroPop, afrPop)
-Mean: 0.1171921
-Standard dev: 0.01021567
+Mean: 1864.69
+Standard dev: 165.6456
 > avgPairwiseDiv(100, euroPop, afrPop)
-Mean: 0.1189687
-Standard dev: 0.009350533
+Mean: 1882.21
+Standard dev: 147.4192
 > avgPairwiseDiv(100, euroPop, afrPop)
-Mean: 0.117434
-Standard dev: 0.01058257
+Mean: 1883.01
+Standard dev: 157.3716
 > avgPairwiseDiv(100, euroPop, afrPop)
-Mean: 0.118733
-Standard dev: 0.01118574
+Mean: 1853.1
+Standard dev: 172.2504
 > avgPairwiseDiv(100, euroPop, afrPop)
-Mean: 0.1176414
-Standard dev: 0.01058749
+Mean: 1898.67
+Standard dev: 172.7732
 > avgPairwiseDiv(100, euroPop, afrPop)
-Mean: 0.1162412
-Standard dev: 0.01154593
+Mean: 1838.7
+Standard dev: 171.3452
 > avgPairwiseDiv(100, euroPop, afrPop)
-Mean: 0.1155562
-Standard dev: 0.01104126
+Mean: 1837.62
+Standard dev: 183.7197
 > avgPairwiseDiv(100, euroPop, afrPop)
-Mean: 0.1185376
-Standard dev: 0.01045469
+Mean: 1878.04
+Standard dev: 165.1238
 > avgPairwiseDiv(100, euroPop, afrPop)
-Mean: 0.1176364
-Standard dev: 0.01167085
-
-
-Average pairwise nucleotide diversity is greater in the African population.
+Mean: 1869.14
+Standard dev: 160.3713
+> 

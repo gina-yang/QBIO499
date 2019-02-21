@@ -13,7 +13,7 @@ pairwiseDiv <- function(individual1, individual2){
 	} else{
 		i2hap <- as.integer(substr(data[[individual2]], 3, 3))
 	}
-	return(sum((i1hap != i2hap))/length(i1hap))
+	return(sum((i1hap != i2hap)))
 }
 
 avgPairwiseDiv <- function(numPairs, indivSet1, indivSet2){

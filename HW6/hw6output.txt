@@ -1,10 +1,3 @@
-> avgPairwiseDiv(100, afrPop, euroPop)
-Mean: 1872.52
-Standard dev: 160.8748
-> avgPairwiseDiv(100, afrPop, euroPop)
-Mean: 1868.35
-Standard dev: 194.3223
-> 
 > avgPairwiseDiv(100, euroPop)
 Mean: 1481.32
 Standard dev: 226.3159
@@ -97,4 +90,5 @@ Standard dev: 165.1238
 > avgPairwiseDiv(100, euroPop, afrPop)
 Mean: 1869.14
 Standard dev: 160.3713
-> 
+
+The African population exhibits higher average pairwise diversity than the European population.

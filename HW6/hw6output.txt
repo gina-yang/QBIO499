@@ -1,4 +1,4 @@
-avgPairwiseDiv(100, euroPop)
+> avgPairwiseDiv(100, euroPop)
 Mean: 0.09038273
 Standard dev: 0.02036973
 > avgPairwiseDiv(100, euroPop)
@@ -90,4 +90,6 @@ Standard dev: 0.01045469
 > avgPairwiseDiv(100, euroPop, afrPop)
 Mean: 0.1176364
 Standard dev: 0.01167085
-> 
+
+
+Average pairwise nucleotide diversity is greater in the African population.

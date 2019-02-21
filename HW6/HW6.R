@@ -1,3 +1,7 @@
+# Gina Yang
+# QBIO 499
+# 21 February 2019
+
 pairwiseDiv <- function(individual1, individual2){
 	if( sample(1:2, 1) == 1 ){
 		i1hap <- as.integer(substr(data[[individual1]], 1, 1))

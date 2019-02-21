@@ -1,0 +1,93 @@
+avgPairwiseDiv(100, euroPop)
+Mean: 0.09038273
+Standard dev: 0.02036973
+> avgPairwiseDiv(100, euroPop)
+Mean: 0.09268477
+Standard dev: 0.01198538
+> avgPairwiseDiv(100, euroPop)
+Mean: 0.09314291
+Standard dev: 0.01766162
+> avgPairwiseDiv(100, euroPop)
+Mean: 0.09220777
+Standard dev: 0.02039242
+> avgPairwiseDiv(100, euroPop)
+Mean: 0.09451923
+Standard dev: 0.01287842
+> avgPairwiseDiv(100, euroPop)
+Mean: 0.09441679
+Standard dev: 0.01179988
+> avgPairwiseDiv(100, euroPop)
+Mean: 0.09336664
+Standard dev: 0.01448221
+> avgPairwiseDiv(100, euroPop)
+Mean: 0.09286262
+Standard dev: 0.01236797
+> avgPairwiseDiv(100, euroPop)
+Mean: 0.0939775
+Standard dev: 0.01315744
+> avgPairwiseDiv(100, euroPop)
+Mean: 0.09119972
+Standard dev: 0.01512027
+> 
+> avgPairwiseDiv(100, afrPop)
+Mean: 0.110335
+Standard dev: 0.01910356
+> avgPairwiseDiv(100, afrPop)
+Mean: 0.1127237
+Standard dev: 0.01166303
+> avgPairwiseDiv(100, afrPop)
+Mean: 0.1135332
+Standard dev: 0.00968169
+> avgPairwiseDiv(100, afrPop)
+Mean: 0.1132686
+Standard dev: 0.009790028
+> avgPairwiseDiv(100, afrPop)
+Mean: 0.1120067
+Standard dev: 0.01573049
+> avgPairwiseDiv(100, afrPop)
+Mean: 0.1103167
+Standard dev: 0.01507522
+> avgPairwiseDiv(100, afrPop)
+Mean: 0.1114247
+Standard dev: 0.01828758
+> avgPairwiseDiv(100, afrPop)
+Mean: 0.1131379
+Standard dev: 0.01500683
+> avgPairwiseDiv(100, afrPop)
+Mean: 0.1116585
+Standard dev: 0.0149618
+> avgPairwiseDiv(100, afrPop)
+Mean: 0.1138317
+Standard dev: 0.01021847
+> 
+> avgPairwiseDiv(100, euroPop, afrPop)
+Mean: 0.1185043
+Standard dev: 0.0105822
+> avgPairwiseDiv(100, euroPop, afrPop)
+Mean: 0.1171921
+Standard dev: 0.01021567
+> avgPairwiseDiv(100, euroPop, afrPop)
+Mean: 0.1189687
+Standard dev: 0.009350533
+> avgPairwiseDiv(100, euroPop, afrPop)
+Mean: 0.117434
+Standard dev: 0.01058257
+> avgPairwiseDiv(100, euroPop, afrPop)
+Mean: 0.118733
+Standard dev: 0.01118574
+> avgPairwiseDiv(100, euroPop, afrPop)
+Mean: 0.1176414
+Standard dev: 0.01058749
+> avgPairwiseDiv(100, euroPop, afrPop)
+Mean: 0.1162412
+Standard dev: 0.01154593
+> avgPairwiseDiv(100, euroPop, afrPop)
+Mean: 0.1155562
+Standard dev: 0.01104126
+> avgPairwiseDiv(100, euroPop, afrPop)
+Mean: 0.1185376
+Standard dev: 0.01045469
+> avgPairwiseDiv(100, euroPop, afrPop)
+Mean: 0.1176364
+Standard dev: 0.01167085
+> 

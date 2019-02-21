@@ -1,5 +1,4 @@
 pairwiseDiv <- function(individual1, individual2){
-	# Takes in 2 individuals (by name) and outputs the pairwise nucleotide diversity between one haplotype from each of these individuals
 	if( sample(1:2, 1) == 1 ){
 		i1hap <- as.integer(substr(data[[individual1]], 1, 1))
 	} else{
@@ -10,22 +9,22 @@ pairwiseDiv <- function(individual1, individual2){
 	} else{
 		i2hap <- as.integer(substr(data[[individual2]], 3, 3))
 	}
-	print(sum(!(i1hap & i2hap)))
-	print(sum(!(i1hap & i2hap))/length(i1hap))
+	return(sum((i1hap != i2hap))/length(i1hap))
 }
 
-avgPairwiseDiv <- function(indivSet, numPairs){
+avgPairwiseDiv <- function(numPairs, indivSet1, indivSet2){
 	divVec <- vector(mode="numeric", length=0)
 	for( i in 1:numPairs ){
-		individual1 <- sample(indivSet, 1)
-		individual2 <- sample(indivSet, 1)
-		
+		individual1 <- sample(indivSet1, 1)
+		if( missing(indivSet2) ){
+			individual2 <- sample(indivSet1, 1)
+		} else{
+			individual2 <- sample(indivSet2, 1)
+		}
 		divVec[i] = pairwiseDiv(individual1, individual2)
 	}
-	print(mean(divVec))
-	print(sd(divVec))
-}
-
-main <- function(data){
-	
+	cat("Mean: ")
+	cat(mean(divVec))
+	cat("\nStandard dev: ")
+	cat(sd(divVec))
 }

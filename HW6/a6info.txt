@@ -1,0 +1,8 @@
+# How many mutations (SNPs, variants) are C -> T?
+> sum(data$REF=="C" & data$ALT=="T")  # Where data is the vector for the file
+
+Phased - know the haplotypes
+
+Which individual has the most ALT calls? How many? (aka how different from the reference it is)
+
+Which SNP has the most ALT calls? How many? (about the individual SNP)

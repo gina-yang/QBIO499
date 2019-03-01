@@ -20,6 +20,7 @@ testVariance <- function(snp, trait){
 	addGroup = getGroup(trait, addPos)
 	recGroup = getGroup(trait, recPos)
 
+	
 	print(mean(domGroup))
 	print(mean(addGroup))
 	print(mean(recGroup))
@@ -29,7 +30,7 @@ main <- function(genotypes, phenotypes){
 	for( i in range(2, 4) ){
 		# Get traits 
 		trait = as.vector(phenotypes[i, 10:90],mode="numeric")
-		for( j in range(1,2) ){
+		for( j in range(1,81) ){
 			# Get SNPs
 			snp = as.vector(unlist(genotypes[j, 10:90]))
 			testVariance(snp, trait)

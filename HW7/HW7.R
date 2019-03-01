@@ -1,18 +1,39 @@
-
-
-testVariance <- function(snpRow){
-	# Split individuals based on genotype. 
-	# Each vector contains the (column) positions of these individuals in the csv file
-	dom = which(snpRow == "1|1") + 9
-	het = which(snpRow %in% c("1|0", "0|1")) + 9
-	rec = which(snpRow == "0|0") + 9
-	
+getGroup <- function(toGroup, posVec){
+	grouping <- c(0)
+	count = 1
+	for( i in posVec ){
+		grouping[count] = toGroup[i]
+		count = count + 1
+	}
+	return(grouping)
 }
 
-# Get traits 
-trait1 = as.vector(y[2,10:90], mode="numeric")
-trait2 = as.vector(y[3,10:90], mode="numeric")
-trait3 = as.vector(y[4,10:90], mode="numeric")
+testVariance <- function(snp, trait){
+	# Split individuals based on genotype. 
+	# Each vector contains the (column) positions of these individuals
+	domPos = which(snp == "1|1") 
+	addPos = which(snp %in% c("1|0", "0|1"))
+	recPos = which(snp == "0|0") 
 
-# get SNPs
-snpRow = as.vector(unlist(x[1, 10:90]))
+	# Group individuals based on phenotype.
+	domGroup = getGroup(trait, domPos)
+	addGroup = getGroup(trait, addPos)
+	recGroup = getGroup(trait, recPos)
+
+	print(mean(domGroup))
+	print(mean(addGroup))
+	print(mean(recGroup))
+}
+
+main <- function(genotypes, phenotypes){
+	for( i in range(2, 4) ){
+		# Get traits 
+		trait = as.vector(phenotypes[i, 10:90],mode="numeric")
+		for( j in range(1,2) ){
+			# Get SNPs
+			snp = as.vector(unlist(genotypes[j, 10:90]))
+			testVariance(snp, trait)
+		}
+	}
+}
+

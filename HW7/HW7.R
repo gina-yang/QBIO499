@@ -1,9 +1,12 @@
-# https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3531285/
+# Gina Yang
+# QBIO499
+# 28 February 2019
 
 # The null hypothesis of an ANOVA using a single SNP is that there is no difference 
-# between the trait means of any genotype group
+# between the trait means of any genotype group (homozygous dominant, heterozygous, homozygous recessive)
 
-
+# Use a position vector and an input vector to isolate into another vector the elements
+# with positions in the position vector
 getGroup <- function(toGroup, posVec){
 	grouping <- c(0)
 	count = 1
@@ -28,20 +31,13 @@ testVariance <- function(snp, trait){
 
 	g <- factor(rep(letters[1:3], c(length(domGroup), length(hetGroup), length(recGroup))),)
 	test = aov(trait~g)
-	print(summary(test))
 	pval = summary(test)[[1]][["Pr(>F)"]]
-	print(pval)
 	return(pval)
-
-
-	# print(mean(domGroup))
-	# print(mean(hetGroup))
-	# print(mean(recGroup))
-	# print("\n")
-
 }
 
-main <- function(genotypes, phenotypes){
+main <- function(){
+	genotypes = read.csv("geno-hw7.csv", header=T)
+	phenotypes = read.csv("pheno-hw7.csv", header=T)
 	for( i in 1:3 ){
 		# Get traits 
 		trait = as.vector(phenotypes[i, 10:90],mode="numeric")
@@ -52,9 +48,9 @@ main <- function(genotypes, phenotypes){
 			pval = testVariance(snp, trait)
 			v[j] = pval
 		}
-		print(v)
-		v = p.adjust(v)
-		print(v)
+		sigSNPLoc = which(v < 0.05)
+		names = as.vector(unlist(genotypes[sigSNPLoc, 3]))
+		print(names)
 	}
 }
 

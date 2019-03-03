@@ -1,0 +1,4 @@
+Significant SNPs:
+trait1: "rs1997644"
+trait2: "rs915675"  "rs5748622" "rs5994193" "rs5996522" "rs5754897" "rs6000026" "rs6002083" "rs738632"  "rs137158" 
+trait3: none

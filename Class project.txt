@@ -1,0 +1,7 @@
+Class project
+Water samples
+
+Two main approaches:
+ribosomal RNA present in almost all bacteria conserve enough to use same primers
+Query 9 Hypervariable Regions ~1500 bp
+These regionis dfferentiate bacteria

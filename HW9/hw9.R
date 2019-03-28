@@ -24,7 +24,15 @@ cv10f <- function(data, model){
 		MSE <- mean((data$motor_UPDRS - predict(lm.fit, newdata = testData))^2)
 		mse_vec[i] = MSE
 	}
-	return(mean(mse_vec)
+	return(mean(mse_vec))
 }
 
+> amse_vec <- c(0)
+> amse_vec[1] = cv10f(park, motor_UPDRS~PPE)
+> amse_vec[2] = cv10f(park, motor_UPDRS~PPE+DFA)
+> amse_vec[4] = cv10f(park, motor_UPDRS~PPE+DFA+Jitter.Abs.+HNR)
+> amse_vec[8] = cv10f(park, motor_UPDRS~PPE+DFA+Jitter.Abs.+HNR+NHR+Jitter...+Shimmer.DDA+Shimmer.APQ11)
+> amse_vec[16] = cv10f(park, formula)
+
+> plot(amse_vec, xlab="number regression terms included", ylab="MSE", main="Parkinsons: 10-fold Cross-validation" )
 

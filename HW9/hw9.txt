@@ -1,0 +1,1 @@
+This figure shows that, as more regression terms/variables are included in models for cross-validation, the mean squared error increases. This is because the model becomes worse at predicting values as more insignificant variables are included in it.

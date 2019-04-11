@@ -30,13 +30,14 @@ lda.qda.cv <- function(mydata,myformula,cvfold,ycol,FUN) {
 	cv = mean(temp)
 	return(cv)
 }
+# > iris.lda <- lda.qda.cv(iris, Species~., 10, 5, lda)
+
 
 naivebayes.cv <- function(mydata,myformula,cvfold,ycol) {
 	# mydata is the data frame
 	# myformula is our formula
 	# cvfold, usually 5 or 10
 	# ycol index of column in mydata we are trying to predict
-	# FUN lda or qda
 	n = length(mydata[,1])
 	rord = sample(1:n)
 	sz = round(n/cvfold)
@@ -49,7 +50,7 @@ naivebayes.cv <- function(mydata,myformula,cvfold,ycol) {
 			testset = mydata[testind,]
 			trainset = mydata[-testind,]
 			myfit = naivebayes::naive_bayes(myformula,trainset) # here
-			myguess = predict(myfit,testset) # here
+			myguess = predict(myfit,testset, type="class") # here
 			temp[j] = mean(myguess != mydata[testind,ycol])
 	}
 	cv = mean(temp)
@@ -61,7 +62,6 @@ knn.cv <- function(mydata,myformula,cvfold,ycol) {
 	# myformula is our formula
 	# cvfold, usually 5 or 10
 	# ycol index of column in mydata we are trying to predict
-	# FUN lda or qda
 	n = length(mydata[,1])
 	rord = sample(1:n)
 	sz = round(n/cvfold)

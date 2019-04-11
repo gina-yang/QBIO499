@@ -15,7 +15,7 @@ confmx <- function(myfit, mydata, th){
 	cm[2,2] = sum(guess[truth == "Yes"] == "Yes", na.rm = T)
 }
 
-roc -< function(myfit, mydata, thvec) {
+roc <- function(myfit, mydata, thvec) {
 	tp = thvec
 	fp = thvec
 	for( i in 1:length(thvec)){

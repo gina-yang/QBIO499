@@ -12,6 +12,7 @@ lda.qda.cv <- function(mydata,myformula,cvfold,ycol,FUN) {
 	# cvfold, usually 5 or 10
 	# ycol index of column in mydata we are trying to predict
 	# FUN lda or qda
+	library(MASS)
 	n = length(mydata[,1])
 	rord = sample(1:n)
 	sz = round(n/cvfold)
@@ -60,11 +61,12 @@ naivebayes.cv <- function(mydata,myformula,cvfold,ycol) {
 # > iris.nb <- naivebayes.cv(iris, Species~., 10, 5)
 
 
-knn.cv <- function(mydata,myformula,cvfold,ycol) {
+knn.cv <- function(mydata,myformula,cvfold,ycol, neighbors) {  # Optimal num of neighbors (k) = 7
 	# mydata is the data frame
 	# myformula is our formula
 	# cvfold, usually 5 or 10
 	# ycol index of column in mydata we are trying to predict
+	library(caret)
 	n = length(mydata[,1])
 	rord = sample(1:n)
 	sz = round(n/cvfold)
@@ -76,11 +78,39 @@ knn.cv <- function(mydata,myformula,cvfold,ycol) {
 			testind = rord[lo:hi]
 			testset = mydata[testind,]
 			trainset = mydata[-testind,]
-			myfit = knn3(myformula, trainset, k=25) # here
+			myfit = knn3(myformula, trainset, k = neighbors) # here
 			myguess = predict(myfit,testset, type="class") # here
 			temp[j] = mean(myguess != mydata[testind,ycol])
 	}
 	cv = mean(temp)
 	return(cv)
 }
-# > iris.knn <- knn.cv(iris, Species~., 10, 5)
+# > iris.knn <- knn.cv(iris, Species~., 10, 5, 7)
+
+getMean <- function(repeats){
+	iris.lda <- c(0)
+	iris.qda <- c(0)
+	iris.knn <- c(0)
+	iris.nb <- c(0)
+	for( i in 1:repeats ){
+		iris.lda[i] <- lda.qda.cv(iris, Species~., 10, 5, lda)
+		iris.qda[i] <- lda.qda.cv(iris, Species~., 10, 5, qda)
+		iris.nb[i] <- naivebayes.cv(iris, Species~., 10, 5)
+		iris.knn[i] <- knn.cv(iris, Species~., 10, 5, 7)
+	}
+	print(mean(iris.lda))
+	print(mean(iris.qda))
+	print(mean(iris.knn))
+	print(mean(iris.nb))
+}
+
+# plot(iris.lda, ylim=range(iris.lda, iris.qda, iris.knn, iris.nb), col="black")
+
+plot(iris.lda, main="Misclassification error across 10 iterations of 10-fold cross-validation", xlab="Iteration", ylab="Misclassification error", ylim=range(iris.lda, iris.qda, iris.knn, iris.nb), col="black")
+points(iris.qda, col='green')
+lines(iris.lda)
+lines(iris.qda, col='green')
+points(iris.knn, col='blue')
+lines(iris.knn, col='blue')
+points(iris.nb, col='red')
+lines(iris.nb, col='red')

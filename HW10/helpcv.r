@@ -31,6 +31,7 @@ lda.qda.cv <- function(mydata,myformula,cvfold,ycol,FUN) {
 	return(cv)
 }
 # > iris.lda <- lda.qda.cv(iris, Species~., 10, 5, lda)
+# > iris.qda <- lda.qda.cv(iris, Species~., 10, 5, qda)
 
 
 naivebayes.cv <- function(mydata,myformula,cvfold,ycol) {
@@ -56,6 +57,8 @@ naivebayes.cv <- function(mydata,myformula,cvfold,ycol) {
 	cv = mean(temp)
 	return(cv)
 }
+# > iris.nb <- naivebayes.cv(iris, Species~., 10, 5)
+
 
 knn.cv <- function(mydata,myformula,cvfold,ycol) {
 	# mydata is the data frame
@@ -80,3 +83,4 @@ knn.cv <- function(mydata,myformula,cvfold,ycol) {
 	cv = mean(temp)
 	return(cv)
 }
+# > iris.knn <- knn.cv(iris, Species~., 10, 5)

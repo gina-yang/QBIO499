@@ -1,0 +1,70 @@
+
+R version 3.5.2 (2018-12-20) -- "Eggshell Igloo"
+Copyright (C) 2018 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> install.packages("neuralnet")
+Installing package into ‘C:/Users/ginay/Documents/R/win-library/3.5’
+(as ‘lib’ is unspecified)
+also installing the dependency ‘Deriv’
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.5/Deriv_3.8.5.zip'
+Content type 'application/zip' length 132887 bytes (129 KB)
+downloaded 129 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.5/neuralnet_1.44.2.zip'
+Content type 'application/zip' length 123281 bytes (120 KB)
+downloaded 120 KB
+
+package ‘Deriv’ successfully unpacked and MD5 sums checked
+package ‘neuralnet’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+	C:\Users\ginay\AppData\Local\Temp\RtmpYZDJ3z\downloaded_packages
+> library(neuralnet)
+Warning message:
+package ‘neuralnet’ was built under R version 3.5.3 
+> iris[1:5,]
+  Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+1          5.1         3.5          1.4         0.2  setosa
+2          4.9         3.0          1.4         0.2  setosa
+3          4.7         3.2          1.3         0.2  setosa
+4          4.6         3.1          1.5         0.2  setosa
+5          5.0         3.6          1.4         0.2  setosa
+> trainind = sample(1:150,75)
+> sciris = iris
+> sciris[,1:4] = scale(sciris[,1:4])
+> nn1 = neuralnet(Species~., iris[trainind,hidden = 2])
+Error in `[.data.frame`(iris, trainind, hidden = 2) : 
+  unused argument (hidden = 2)
+> nn1 = neuralnet(Species~., iris[trainind,],hidden = 2)
+> nn2 = neuralnet(Species~., iris[trainind,],hidden = 2)
+> nn21 = neuralnet(Species~., iris[trainind,],hidden = c(2,2))
+> plot(nn1)
+> pred1 = predict(nn1, iris[-trainind,])
+> pred2 = predict(nn2, iris[-trainind,])
+> pred21 = predict(nn21, iris[-trainind,])
+> pred1[1:10,]
+       [,1]          [,2]         [,3]
+2  1.000270 -0.0003877928 0.0001500731
+3  1.000348 -0.0004682294 0.0001518772
+5  1.000367 -0.0004873805 0.0001523067
+9  1.000256 -0.0003739068 0.0001497616
+10 1.000344 -0.0004634244 0.0001517694
+13 1.000331 -0.0004508805 0.0001514880
+14 1.000354 -0.0004737275 0.0001520005
+15 1.000370 -0.0004899031 0.0001523633
+16 1.000370 -0.0004900524 0.0001523666
+19 1.000364 -0.0004843684 0.0001522391

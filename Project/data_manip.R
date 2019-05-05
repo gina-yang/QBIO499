@@ -19,6 +19,5 @@ col23_prune <- col23[which(rownames(col23) %in% lsk_rn), ]
 # Merge (horizontal)
 df <- cbind(col23_prune, lsk_prune)
 
-write.table(TikhonovaData.txt)
-
+write.table(df, "TikhonovaData.txt")
 

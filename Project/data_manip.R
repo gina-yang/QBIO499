@@ -9,10 +9,10 @@ lsk = sample(lsk, 1000)
 
 # Prune the data frames
 col23_rn = rownames(col23)
-# Use the rownames of col123 to get genes that are also in lsk
+# Use the rownames of col23 to get genes that are also in lsk
 lsk_prune <- lsk[which(rownames(lsk) %in% col23_rn),]
 lsk_rn = rownames(lsk_prune)
-# Use the rownames of the pruned lsk to get genes that are also in col123
+# Use the rownames of the pruned lsk to get genes that are also in col23
 col23_prune <- col23[which(rownames(col23) %in% lsk_rn), ]
 
 

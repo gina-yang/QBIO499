@@ -10,7 +10,9 @@ The script outputs the threshold, the starting and ending positions of each ORF 
 
 The ORFs of a desired nucleotide string can also be obtained without running the script with the commands
 
-`>>>threshold = getthresh(sequenceString, numSimulations)`
+```R
+>>>threshold = getthresh(sequenceString, numSimulations)
+```
 
 `>>>printORF2d(sequenceString, threshold)`
 

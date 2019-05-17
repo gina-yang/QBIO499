@@ -12,8 +12,6 @@ The ORFs of a desired nucleotide string can also be obtained without running the
 
 ```Python
 threshold = getthresh(sequenceString, numSimulations)
-```
-```Python
 printORF2d(sequenceString, threshold)
 ```
 

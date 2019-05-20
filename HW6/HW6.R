@@ -27,8 +27,5 @@ avgPairwiseDiv <- function(numPairs, indivSet1, indivSet2){
 		}
 		divVec[i] = pairwiseDiv(individual1, individual2)
 	}
-	cat("Mean: ")
-	cat(mean(divVec))
-	cat("\nStandard dev: ")
-	cat(sd(divVec))
+	return(mean(divVec))
 }

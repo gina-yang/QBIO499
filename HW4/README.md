@@ -6,7 +6,9 @@ The [UPGMA algorithm](https://www.sequentix.de/gelquest/help/upgma_method.htm) i
 
 The algorithm (in HW4.py) can be called with:
 
-`outputTree = upgma(speciesList, distancesMatrix)`
+```Python
+outputTree = upgma(speciesList, distancesMatrix)
+```
 
 `speciesList` is a list of trees represented by tuples. `distancesMatrix` is a dictionary specifying pairwise distances between species. Each key is a tuple consisting of a pair of trees (ex. `(("species A", (), ()), ("species B", (), ())`) and the value represents their pairwise distance. Examples can be found in mitodata.py. Finally, the output `outputTree` is a tuple of the form `(name, leftTree, rightTree)`, representing the final tree consisting of all the species in `speciesList`. 
 
